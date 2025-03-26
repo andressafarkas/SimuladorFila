@@ -41,7 +41,7 @@ def chegada(servidores, capacidade):
     
     # Atualiza tempo acumulado para o estado atual
     if fila >= len(tempos_estado):
-        tempos_estado.extend([0.0] * (fila - len(tempos_estado) + 1)
+        tempos_estado.extend([0.0] * (fila - len(tempos_estado) + 1))
     tempos_estado[fila] += tempo_global - sum(tempos_estado[:fila+1])
     
     # Verifica se há espaço na fila
@@ -116,7 +116,7 @@ def run_simulation(servidores, capacidade):
     if fila < len(tempos_estado):
         tempos_estado[fila] += tempo_global - sum(tempos_estado[:fila+1])
     else:
-        tempos_estado.extend([0.0] * (fila - len(tempos_estado) + 1)
+        tempos_estado.extend([0.0] * (fila - len(tempos_estado) + 1))
         tempos_estado[fila] = tempo_global - sum(tempos_estado[:fila])
 
 def print_results(servidores, capacidade):
